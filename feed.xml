@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Documentations</title>
+    <link href="https://blog.victorprouff.fr/feed.xml" rel="self" />
+    <link href="https://blog.victorprouff.fr" />
+    <updated>1970-01-01T01:00:00+01:00</updated>
+    <author>
+        <name>Victor Prouff</name>
+    </author>
+    <id>https://blog.victorprouff.fr</id>
+
+    <entry>
+        <title>test 2</title>
+        <author>
+            <name>Victor Prouff</name>
+        </author>
+        <link href="https://blog.victorprouff.fr/test-2-2.html"/>
+        <id>https://blog.victorprouff.fr/test-2-2.html</id>
+
+        <updated>2020-10-17T22:27:16+02:00</updated>
+            <summary>
+                <![CDATA[
+                    fzeqgerqimport datetimeimport os.pathimport shutilimport sysfrom os import scandirfrom pathlib import Pathfrom modeles.File import FileoriginRepository = &quot;&quot;destinationRepository = &quot;&quot;lstFiles = []def&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h1 id="fzeqgerq">fzeqgerq</h1>
+<pre><code class="language-python">import datetime
+import os.path
+import shutil
+import sys
+from os import scandir
+from pathlib import Path
+from modeles.File import File
+
+originRepository = &quot;&quot;
+destinationRepository = &quot;&quot;
+lstFiles = []
+
+def CopyFiles(files):
+    currentDate = &quot;&quot;
+    nbDirectoryCreated = 0
+
+    for file in files:
+        if file.date != currentDate:
+            currentDate = file.date
+
+        directoryPath = destinationRepository + &quot;/&quot; + currentDate.strftime(&quot;%Y-%m-%d&quot;)
+
+        fileObj = Path(directoryPath)
+
+        if fileObj.is_dir() == False:
+            os.mkdir(directoryPath)
+            print(&quot;Dossier créé : %s&quot; %(directoryPath))
+            nbDirectoryCreated += 1
+            pass
+
+        shutil.copy(file.path, directoryPath)
+
+        pass
+    return nbDirectoryCreated
+
+def ListAndSortedFilesByPath(path):
+    for entry in scandir(path):
+        if entry.is_file() :
+            lstFiles.append(File(entry.name, entry.path,datetime.date.fromtimestamp(os.path.getmtime(entry.path))))
+            pass
+
+    return sorted(lstFiles, key=lambda file: file.date, reverse=True)
+
+filesSortedByDate = ListAndSortedFilesByPath(originRepository)
+
+print(&quot;Le répertoire contient %s fichiers \n&quot; %(len(filesSortedByDate)))
+result = CopyFiles(filesSortedByDate)
+input(&quot;\n%s dossiers ont été créé.&quot; %(result))</code></pre>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>test</title>
+        <author>
+            <name>Victor Prouff</name>
+        </author>
+        <link href="https://blog.victorprouff.fr/test-2.html"/>
+        <id>https://blog.victorprouff.fr/test-2.html</id>
+
+        <updated>2020-10-17T22:27:16+02:00</updated>
+            <summary>
+                <![CDATA[
+                    import datetimeimport os.pathimport shutilimport sysfrom os import scandirfrom pathlib import Pathfrom modeles.File import FileoriginRepository = ""destinationRepository = ""lstFiles = []def&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <pre class="line-numbers  language-python"><code>import datetime
+import os.path
+import shutil
+import sys
+from os import scandir
+from pathlib import Path
+from modeles.File import File
+
+originRepository = ""
+destinationRepository = ""
+lstFiles = []
+
+def CopyFiles(files):
+    currentDate = ""
+    nbDirectoryCreated = 0
+
+    for file in files:
+        if file.date != currentDate:
+            currentDate = file.date
+
+        directoryPath = destinationRepository + "/" + currentDate.strftime("%Y-%m-%d")
+
+        fileObj = Path(directoryPath)
+        
+        if fileObj.is_dir() == False:
+            os.mkdir(directoryPath)
+            print("Dossier créé : %s" %(directoryPath))
+            nbDirectoryCreated += 1
+            pass
+
+        shutil.copy(file.path, directoryPath)
+
+        pass
+    return nbDirectoryCreated
+
+def ListAndSortedFilesByPath(path):
+    for entry in scandir(path):
+        if entry.is_file() :
+            lstFiles.append(File(entry.name, entry.path,datetime.date.fromtimestamp(os.path.getmtime(entry.path))))
+            pass
+    
+    return sorted(lstFiles, key=lambda file: file.date, reverse=True)
+
+filesSortedByDate = ListAndSortedFilesByPath(originRepository)
+
+print("Le répertoire contient %s fichiers \n" %(len(filesSortedByDate)))
+result = CopyFiles(filesSortedByDate)
+input("\n%s dossiers ont été créé." %(result))
+</code></pre>
+
+  <p>
+    # fzeqgf
+  </p>
+
+  <p>
+    
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Projet : Transférer des photos via Python</title>
+        <author>
+            <name>Victor Prouff</name>
+        </author>
+        <link href="https://blog.victorprouff.fr/projet-transferer-des-photos-via-python.html"/>
+        <id>https://blog.victorprouff.fr/projet-transferer-des-photos-via-python.html</id>
+            <category term="Python"/>
+            <category term="Projet"/>
+            <category term="Dev"/>
+
+        <updated>2020-10-17T22:27:16+02:00</updated>
+            <summary>
+                <![CDATA[
+                    ProblématiqueJ'ai toujours essayé de développer des petits projets perso mais au final, ils n'aboutissaient que très rarement. J'ai lu un&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 id="probl%C3%A9matique" class="code-line" data-line="2">Problématique</h2>
+<p data-line="4">J'ai toujours essayé de développer des petits projets perso mais au final, ils n'aboutissaient que très rarement. J'ai lu un article de <a href="https://www.jesuisundev.com/projet-perso/" target="_blank" rel="noopener noreferrer">Je suis un dev</a> qui était fort intéressant. Je vous encourage à le lire et surtout à le suivre.<br><br>Mais en gros il dit que pour faire un projet perso, découvrir une techno ou un concept, bref, pour coder après notre journée de taf, il fallait trouver un projet qui nous bottait vraiment. Trouver un truc en lien avec une passion. Qui soit utile, pratique, rigolo, qui nous rende service. Un truc pas trop gros mais intéressant.</p>
+<p class="code-line" data-line="7">Je galère à trouver la plus part du temps. Mais, l'autre jour je me suis trouvé un petit projet tout con .. mais qui aurait une vrai utilité dans mon utilisation quotidienne.</p>
+<p class="code-line " data-line="9">En tant que photographe (amateur) une opération que je fais à chaque fin de shoot c'est le déchargement de mes photos sur l'ordi puis sur mon NAS. La gestion et la sauvegarde des photos et primordiale et demande une certaine organisation si on ne veut pas perdre de photos ou se retrouver noyé dans un bordel sans nom avec des photos éparpillé partout...</p>
+<h2 id="d%C3%A9tails-de-mon-process-de-d%C3%A9chargement-photos" class="code-line" data-line="11">Détails de mon processus de déchargement photos</h2>
+<p class="code-line" data-line="13">Après un shoot quand je rentre chez moi, je procède comme suit :</p>
+<ul>
+<li class="code-line " data-line="14">Je branche la carte SD au PC</li>
+<li class="code-line " data-line="15">Je copie les photos prises dans un répertoire par date de prise de vue</li>
+<li class="code-line" data-line="16">Une fois que je me suis assuré du transfert, je supprime la carte (en général, j'attends plusieurs jours histoire d'avoir un backup)</li>
+</ul>
+<p class="code-line " data-line="18">L'étape la plus "complexe" et chiante c'est la deuxième. Il faut rassembler les photos par dates (il m'arrive de décharger mes photos qu'après 2-3 shoot quand je pars en weekend ou en vacances) et les mettre dans un même dossier nommé à partir de la date de la prise de vue (2020-10-14). Je peux rajouter un titre court qui résume la session photo (exemple : 2020-10-14 Chat). Ça peut prendre un peu de temps, entre les transferts entre la carte et le pc, rassembler les photos d'une même date dans le même dossier etc.</p>
+<h2 id="solution" class="code-line" data-line="21">Solution</h2>
+<p class="code-line " data-line="23">Et .. et si je pouvais pas automatiser tout ça ? De quoi ai je besoin ?</p>
+<ul>
+<li class="code-line" data-line="25">Un programme qui lise les fichiers</li>
+<li class="code-line" data-line="26">Récupérer la date de prise de vue</li>
+<li class="code-line" data-line="27">Les rassembler par date</li>
+<li class="code-line " data-line="28">Déplacer des fichiers groupe par groupe et les placer dans un répertoire avec comme nom la date</li>
+</ul>
+<p class="code-line" data-line="30">Bref. Rien de bien foufou.</p>
+<p class="code-line  " data-line="32">Etant développeur backend, j'utilise au quotidien du C# .net... ça fait un peu sortir la grosse artillerie pour pas grand chose. Par contre, m'essayer au python me tente depuis un petit moment. Je n'avais jamais trop prit le temps de me lancer et je me dis que c'est l'occasion.</p>
+<p class="code-line       " data-line="34">J'ai commencé par faire plusieurs tests pour comprendre le langage et tester individuellement les différentes briques de mon projet.</p>
+<p class="code-line                 " data-line="36">Voila le résultat. Soyez indulgent, je maîtrise par encore le langage ^^ D'ailleurs, si vous avez des suggestions ou remarques constructives, je suis preneur :)</p>
+<p class="code-line " data-line="38">Fichier DeletePictures.py :</p>
+<div>
+<pre>import datetime<br>import os.path<br>import shutil<br>import sys<br>from os import scandir<br>from pathlib import Path<br>from modeles.File import File<br><br>originRepository = ""<br>destinationRepository = ""<br>lstFiles = []<br><br>def CopyFiles(files):<br>    currentDate = ""<br>    nbDirectoryCreated = 0<br><br>    for file in files:<br>        if file.date != currentDate:<br>            currentDate = file.date<br>        directoryPath = destinationRepository + "/" + currentDate.strftime("%Y-%m-%d")<br>        fileObj = Path(directoryPath)<br><br>        if fileObj.is_dir() == False:<br>            os.mkdir(directoryPath)<br>            print("Dossier créé : %s" %(directoryPath))<br>            nbDirectoryCreated += 1<br>            pass<br><br>        shutil.copy(file.path, directoryPath)<br>        pass<br>    return nbDirectoryCreated<br><br>def ListAndSortedFilesByPath(path):<br>    for entry in scandir(path):<br>        if entry.is_file() :<br>            lstFiles.append(File(entry.name, entry.path,datetime.date.fromtimestamp(os.path.getmtime(entry.path))))<br>            pass<br><br>    return sorted(lstFiles, key=lambda file: file.date, reverse=True)<br><br>filesSortedByDate = ListAndSortedFilesByPath(originRepository)<br>print("Le répertoire contient %s fichiers \n" %(len(filesSortedByDate)))<br>result = CopyFiles(filesSortedByDate)<br><br>input("\n%s dossiers ont été créé." %(result))</pre>
+</div>
+<p class="code-line " data-line="92">Fichier <code>File.py</code> :</p>
+<div>
+<pre><code>class File:</code><br><code>    filesCount = 0</code><br><code>    def __init__(self, name, path, date):</code><br><code>        self.name = name</code><br><code>        self.path = path</code><br><code>        self.date = date</code><br><code>        self.filesCount += 1</code></pre>
+</div>
+<p class="code-line " data-line="103">Actuellement, deux problèmes me chagrinent avec ce script :</p>
+<ul>
+<li class="code-line " data-line="104">Il est en un bloc. J'aimerai bien déplacer mes deux fonctions dans un fichier séparé comme j'ai pu le faire avec File.</li>
+<li class="code-line " data-line="105">J'aimerai bien mettre mes paths dans un fichier de configuration mais là pareil, c'est la merde. Jusqu'à présent pas moyen.</li>
+</ul>
+<p class="code-line " data-line="107">Faut que je creuse.</p>
+            ]]>
+        </content>
+    </entry>
+</feed>

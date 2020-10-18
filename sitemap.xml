@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://blog.victorprouff.fr/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+<loc>https://blog.victorprouff.fr/</loc>
+</url>
+<url>
+<loc>https://blog.victorprouff.fr/application-docker.html</loc>
+<lastmod>2020-10-17T13:18:22+02:00</lastmod>
+</url>
+<url>
+<loc>https://blog.victorprouff.fr/docker-2-heberger-site-statique-sur-mon-nas.html</loc>
+<lastmod>2020-10-17T13:18:14+02:00</lastmod>
+</url>
+<url>
+<loc>https://blog.victorprouff.fr/docker-2.html</loc>
+<lastmod>2020-10-17T13:18:30+02:00</lastmod>
+</url>
+<url>
+<loc>https://blog.victorprouff.fr/htaccess.html</loc>
+<lastmod>2020-10-17T13:18:42+02:00</lastmod>
+</url>
+<url>
+<loc>https://blog.victorprouff.fr/projet-transferer-des-photos-via-python.html</loc>
+<lastmod>2020-10-17T12:49:07+02:00</lastmod>
+</url>
+<url>
+<loc>https://blog.victorprouff.fr/test-2-2.html</loc>
+<lastmod>2020-10-17T13:22:35+02:00</lastmod>
+</url>
+<url>
+<loc>https://blog.victorprouff.fr/test-2.html</loc>
+<lastmod>2020-10-17T13:22:51+02:00</lastmod>
+</url>
+</urlset>
